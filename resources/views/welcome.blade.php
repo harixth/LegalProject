@@ -29,73 +29,46 @@
     <body>
         <a id="start"></a>
         <div class="position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-            <div class="nav-container ">
-            <div class="bar bar--sm visible-xs">
+            <nav id="menu2" class="bar bar-2 bar--transparent bar--absolute pos-fixed">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="index.html">
-                                <img class="logo logo-dark" alt="logo" src="stack/img/logo-dark.png" />
-                                <img class="logo logo-light" alt="logo" src="stack/img/logo-light.png" />
-                            </a>
-                        </div>
-                        <div class="col-xs-9 col-sm-10 text-right">
-                            <a href="#" class="hamburger-toggle" data-toggle-class="#menu2;hidden-xs hidden-sm">
-                                <i class="icon icon--sm stack-interface stack-menu"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!--end of row-->
-                </div>
-                <!--end of container-->
-            </div>
-            <!--end bar-->
-            <nav id="menu2" class="bar bar-2 hidden-xs bar--transparent bar--absolute" data-scroll-class='90vh:pos-fixed'>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 text-center text-left-sm hidden-xs col-md-push-5">
+                        <div class="col-md-2 text-left text-left-sm col-md-pull-1">
                             <div class="bar__module">
                                 <a href="index.html">
                                     <img class="logo logo-dark" alt="logo" src="stack/img/logo-dark.png" />
-                                    <img class="logo logo-light" alt="logo" src="stack/img/logo-light.png" />
                                 </a>
                             </div>
                             <!--end module-->
                         </div>
-                        <div class="col-md-5 col-md-pull-2">
+                        <div class="col-md-5 col-md-push-5">
                             <div class="bar__module">
                                 <ul class="menu-horizontal text-left">
-                                    <li><span>Home</span></li>
-                                    <li><span>About</span></li>
-                                    <li><span>FAQ</span></li>
-                                    <li><span>Contact Us</span></li>
+                                    <li><span>Services</span></li>
+                                    <li><span>News</span></li>
+                                    <li><span>About Us</span></li>                                    
                                 </ul>
                             </div>
                             <!--end module-->
                         </div>
-                        <div class="col-md-5 text-right text-left-xs text-left-sm">
-                            <div class="bar__module">
-                                <a class="btn btn--sm type--uppercase" href="#">
-                                    <span class="btn__text">
-                                        Log In
-                                    </span>
-                                </a>
-                                <a class="btn btn--sm btn--primary type--uppercase" href="#">
-                                    <span class="btn__text">
-                                        Register
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="col-md-5 text-right text-left-xs text-left-sm">                           
+                            @if (Route::has('login'))
+                                <div class="bar__module">
+                                    @auth
+                                        <a href="{{ url('/home') }}">Home</a>
+                                    @else
+                                        <a class="btn btn--sm type--uppercase" href="{{ route('login') }}">
+                                            <span class="btn__text">
+                                                Log In
+                                            </span>
+                                        </a>
+                                        <a class="btn btn--sm btn--primary type--uppercase" href="{{ route('register') }}">
+                                            <span class="btn__text">
+                                                Register
+                                            </span>
+                                        </a>
+                                    @endauth
+                                </div>
+                            @endif                           
                             <!--end module-->
                         </div>
                     </div>
@@ -106,63 +79,125 @@
             <!--end bar-->
         </div>
             <div class="main-container">
-            <section class="cover height-90 imagebg text-center" data-overlay="2" id="home">
-                <div class="background-image-holder">
-                    <img alt="background" src="stack/img/landing-10.jpg" />
+            <section class="height-80 text-center" data-overlay="20">
+                <div class="slider" data-arrows="true" style="margin-top:10px;">
+                    <ul class="slides">
+                        <li><img src="stack/img/inner-1.jpg" height="520px" /></li>
+                        <li><img src="stack/img/inner-2.jpg" height="520px" /></li>
+                        <li><img src="stack/img/inner-3.jpg" height="520px" /></li>
+                    </ul>
                 </div>
-                <div class="container pos-vertical-center">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <img alt="Image" class="unmarg--bottom" src="stack/img/headline-1.png" />
-                            <h3>
-                                Streamline your workflow with Stack.
-                            </h3>
-                            <a class="btn btn--primary type--uppercase" href="#">
-                                <span class="btn__text">
-                                    View The Demos
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <!--end of row-->
-                </div>
-                <!--end of container-->
             </section>
-            <section class="cover imagebg height-80 text-center" data-overlay="3">
+            <section class="cover imagebg height-80 text-center parallax">
                 <div class="background-image-holder">
                     <img alt="background" src="stack/img/tourism-1.jpg" />
                 </div>
                 <div class="container pos-vertical-center">
                     <div class="row">
                         <div class="col-sm-12">
-                            <span class="h1 inline-block">Travel deals on</span>
-                            <span class="h1 inline-block typed-text typed-text--cursor" data-typed-strings="Melbourne laneways,luxe glamping,urban hideaways,foodie tours,outback retreats,river cruising,wildlife safaris"></span>
+                            <span class="h1 inline-block">We assist to</span>
+                            <span class="h1 inline-block typed-text typed-text--cursor" data-typed-strings="find your best lawyer,ease your marriage process,provide wasiat services"></span>
                             <p class="lead">
-                                Browse unique travel experiences from over 1,000 expert providers
+                                Browse unique laws services from over 1,00 expert providers
                             </p>
                             <div class="boxed boxed--lg bg--white text-left">
                                 <form class="form--horizontal">
-                                    <div class="col-sm-6 col-md-3">
-                                        <input type="text" name="location" placeholder="Destination" />
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <input type="text" name="location" placeholder="Location" />
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="input-select">
-                                            <select>
-                                                <option selected="" value="Default">Select a discipline</option>
-                                                <option value="design">Design</option>
-                                                <option value="development">Development</option>
-                                                <option value="management">Management</option>
-                                                <option value="marketing">Marketing</option>
-                                            </select>
+                                    <div class="row">
+                                        <div class="col-md-8 col-md-offset-2">
+                                            <div class="input-select">
+                                                <select>
+                                                    <option selected="" value="Default">Subject Matter</option>
+                                                    <option value="design">Divorce</option>
+                                                    <option value="Child Custody">Child Custody</option>
+                                                    <option value="Poligamy">Poligamy</option>
+                                                    <option value="Syariahco">Syariah Criminal Offence</option>
+                                                    <option value="Nusyuz">Nusyuz</option>
+                                                    <option value="Alimony">Alimony</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 col-md-offset-2">
+                                            <div class="input-select">
+                                                <select>
+                                                    <option selected="" value="Default">Service</option>
+                                                    <option value="Small">Advice</option>
+                                                    <option value="RTC">Representation to Court</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 col-md-offset-2">
+                                            <div class="input-select">
+                                                <select>
+                                                    <option selected="" value="Default">Location</option>
+                                                    <option value="Gombak">Gombak</option>
+                                                    <option value="HuluLangat">Hulu Langat</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 col-md-offset-2">
+                                            <div class="input-select">
+                                                <select>
+                                                    <option selected="" value="Default">Budget Range</option>
+                                                    <option value="1">1000-2000</option>
+                                                    <option value="2">2000-3000</option>
+                                                    <option value="3">3000-4000</option>
+                                                    <option value="4">4000-5000</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-2">
-                                        <button type="submit" class="btn btn--primary type--uppercase">Search</button>
+                                    <div class="row" style="margin-top:20px;">
+                                        <div class="col-md-2 col-md-offset-5">
+                                            <button type="submit" class="btn btn--primary type--uppercase">Submit</button>
+                                        </div>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            <section class="cover imagebg height-60 text-center" data-overlay="7">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature feature-5 boxed boxed--lg boxed--border height-40">
+                                <i class="icon icon-Address-Book"></i>
+                                <div class="feature__body">
+                                    <h5>Find Your Lawyer Easily</h5>
+                                    <p>
+                                        We connect our local lawyers to you. Search for your best lawyer based on your own preference of budget and reputation.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature feature-5 boxed boxed--lg boxed--border height-40">
+                                <i class="icon icon-File-Edit"></i>
+                                <div class="feature__body">
+                                    <h5>Simplify your Marriage Process</h5>
+                                    <p>
+                                        We provide end to end digital marriage process that fully comply with syariah, rules and regulations.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>                       
+                        <div class="col-md-4">
+                            <div class="feature feature-5 boxed boxed--lg boxed--border height-40">
+                                <i class="icon icon-Cursor"></i>
+                                <div class="feature__body">
+                                    <h5>Register Your Wills Here</h5>
+                                    <p>
+                                        Digital wills creator that enable you to protect the people you love. Declare and register your wills here and we will guide you with several simple steps.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -174,22 +209,7 @@
             <footer class="footer-3 text-center-xs space--xs bg-cc">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <img alt="Image" class="logo" src="stack/img/logo-dark.png" />
-                            <ul class="list-inline list--hover">
-                                <li>
-                                    <a href="#">
-                                        <span class="type--fine-print">Get Started</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="type--fine-print">help@stack.io</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 text-right text-center-xs">
+                        <div class="col-md-12 text-center text-center-xs">
                             <ul class="social-list list-inline list--hover">
                                 <li>
                                     <a href="#">
@@ -216,16 +236,17 @@
                     </div>
                     <!--end of row-->
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-md-12 text-center text-center-xs">
                             <p class="type--fine-print">
-                                Supercharge your web workflow
+                                Syariah2u is an online service that provides legal forms and legal information. 
+                                <br>We are not a law firm and are not a substitute for an attorney's advice. 
                             </p>
                         </div>
-                        <div class="col-sm-6 text-right text-center-xs">
+                        <div class="col-md-12 text-center text-center-xs">
                             <span class="type--fine-print">&copy;
-                                <span class="update-year"></span> Stack Inc.</span>
+                                <span class="update-year"></span> Syariah2u </span>
                             <a class="type--fine-print" href="#">Privacy Policy</a>
-                            <a class="type--fine-print" href="#">Legal</a>
+                            <a class="type--fine-print" href="#">Tems of Service</a>
                         </div>
                     </div>
                     <!--end of row-->
